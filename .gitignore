@@ -1,0 +1,14 @@
+__pychache__/
+*.py[cod]
+.venv/
+venv/
+data/
+datasets/
+runs/
+*.pcap
+*pcaping
+*.npz
+*.npy
+.DS_Store
+.vscode/
+.idea/
