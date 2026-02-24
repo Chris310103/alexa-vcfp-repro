@@ -13,3 +13,4 @@ runs/
 .vscode/
 .idea/
 external/
+*.pdf
