@@ -8,12 +8,12 @@ from src_.data.loader import loader_all_trace
 def round_length(length:int,base:int|None=None) -> int:
     if base is None or base <= 1:
         return length
-    return int(round(length/base)*base)
+    return int(round((length+base//2) // base * base))
 
 def create_ll_features(trace:Trace, rounding:int|None=None) -> Set[int]:
     tokens:Set[int]=set()
     for p in trace.packets:
-        length=round_length(p.l,rounding)
+        length=round_length(abs(p.l),rounding)
         if p.d < 0:
             tokens.add(-length)
         else:
